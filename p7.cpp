@@ -14,6 +14,7 @@ public:
     }
 
     float x, y, z; // order here will matter while initializing in list, so use same order for initialization else garbage value will be there for the affected member
+    // For eg: Vector3f() : y(z), z(2.0f), x(3.0f) => x = 3, y = garbage, z = 2
 };
 
 std::ostream &operator<<(std::ostream &os, const Vector3f &obj)

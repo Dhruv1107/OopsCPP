@@ -116,6 +116,9 @@ int main()
     printReference(b); // Copy Constructor not-called since we are passing only reference of the object and not the object
     // If passed by value then we need to make a copy, hence default copy constructor will be called but in reference this will not be the case
 
+    // Another way to handle is to move the copy constructor in the private section
+    // Or use this syntax: myArray(const myArray &rhs)=delete; in the public section => We tell compiler don't make a copy constructor, if made delete it.
+
     // myArray::k = 2;
     std::cout << myArray::k << std::endl;
     a.k = 3;

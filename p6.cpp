@@ -34,8 +34,24 @@ public:
         return *this;
     }
 
+    bool operator==(const Vector3f& rhs) {
+        std::cout<<"part of class"<<std::endl;
+        if(x == rhs.x && y==rhs.y && z == rhs.z) {
+            return true;
+        }
+        return false;
+    }
+
     float x, y, z;
 };
+
+bool operator==(const Vector3f& lhs, const Vector3f& rhs) {
+    std::cout<<"outside of class"<<std::endl;
+    if(lhs.x == rhs.x && lhs.y==rhs.y && lhs.z == rhs.z) {
+        return true;
+    }
+    return false;
+}
 
 // To overload ostream operator '<<' we need to do as follows (refer cppreference)
 // Note: It can't be declared inside a class, see return type (ostream)
@@ -68,6 +84,16 @@ int main()
     // std::cout << result.x << " " << result.y << " " << result.z << std::endl;
 
     std::cout << result << std::endl; // operator '<<' overloading
+
+    myVector2.x = 1.f;
+    myVector2.y = 2.f;
+    myVector2.z = 3.f;
+
+    if(myVector == myVector2) {
+        std::cout<<"vectors are equal"<<std::endl;
+    } else {
+        std::cout<<"vectors are not equal"<<std::endl;
+    }
 
     return 0;
 }
