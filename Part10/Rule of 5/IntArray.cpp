@@ -41,12 +41,14 @@ IntArray &IntArray::operator=(const IntArray &rhs)
     return *this;
 }
 // Move constructor
-IntArray::IntArray(IntArray &&source)
+IntArray::IntArray(IntArray&& source) //rvalue reference
 {
-    m_name = source.m_name;
-    source.m_name = "";
-    m_data = source.m_data;
-    source.m_data = nullptr;
+    m_name = source.m_name;  // Steal the name
+    source.m_name = "";       // Empty out the old object
+
+    m_data = source.m_data;   // Steal the data pointer
+    source.m_data = nullptr;  // Nullify the old pointer
+
     std::cout << m_name << " was move constructed" << std::endl;
 }
 // Move assignment operator
