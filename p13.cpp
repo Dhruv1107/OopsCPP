@@ -19,7 +19,7 @@ public:
     float x, y;
 };
 
-class Golden : public Dog // Inheriring Dog class
+class Golden : public Dog // Inheriring Dog class(called derived class or subclass)
 {
 public:
     Golden() : m_sticksRetrieved{0} {}

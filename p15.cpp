@@ -99,3 +99,13 @@ int main()
 // As ctor are not inherited and we need to construct base class before derived class
 
 // Also we cannot skip level in Inheritance heirarchy like calling TopClassLevel() in monster as they are not directly inherited
+
+// Output:
+/*
+TopLevelClass Constructor
+EntityBase Constructor
+Monster(name) Constructor
+Monster Destructor
+EntityBase Destructor
+TopLevleClass Destructor
+*/

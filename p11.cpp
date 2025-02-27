@@ -1,12 +1,13 @@
 // friend function
 // Refer: https://en.cppreference.com/w/cpp/language/friend
+// The friend declaration appears in a class body and grants a function or another class access to private and protected members of the class where the friend declaration appears.
 // Most commonly used in operator overloading
 #include <iostream>
 
 class PrivateSecurityInfo
 {
     int passcode;
-    friend class UserDefinedTypes;
+    friend class UserDefinedTypes;  // It tells class UserDefinedTypes is my friend and he can look up my private info
 };
 
 class UserDefinedTypes
@@ -14,6 +15,7 @@ class UserDefinedTypes
 public:
     friend void PrintPrivateMemberVariable(UserDefinedTypes u); // after adding this the error will be gone, it can be added in private also
     // it doesnt matter as long as it is declared in the class
+    // So basically this function is my friend and he can access my private info
     PrivateSecurityInfo m_info; // since we declared this class as friend in PrivateSecurityInfo, we can access its private members
     UserDefinedTypes() : m_privateMemberVariable(0) { m_info.passcode = 9; }
 
