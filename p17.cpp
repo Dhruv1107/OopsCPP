@@ -14,16 +14,20 @@ public:
     Base()
     {
         std::cout << "Base Constructor" << std::endl;
+        baseData = new int[10];
     }
-    virtual ~Base() // making virtual will force inheritance heirarchy to call destructor
+    virtual ~Base() // making virtual will force inheritance heirarchy to call destructor.
+                    // Remove the virtual and see the memory leak of 60 bytes in valgrind.
     {
         std::cout << "Base Destructor" << std::endl;
+        delete[] baseData;
     }
 
     virtual void MemberFunc()
     {
         std::cout << "Base::MemberFunc()" << std::endl;
     }
+    int *baseData;
 };
 
 class Derived : public Base
@@ -32,17 +36,20 @@ public:
     Derived()
     {
         std::cout << "Derived Constructor" << std::endl;
+        derivedData = new int[15];
     }
 
     ~Derived()
     {
         std::cout << "Derived Destructor" << std::endl;
+        delete[] derivedData;
     }
 
     void MemberFunc() override // To overrirde a Base class member we need to make it virtual
     {
         std::cout << "Derived::MemberFunc()" << std::endl;
     }
+    int *derivedData;
 };
 
 int main()

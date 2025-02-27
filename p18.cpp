@@ -15,6 +15,7 @@ public:
     }
 
     virtual void MemberFunc() // Whenever we have 'virtual', a default member of class, the vtable pointer is initialised by default.
+                                // vtable pointer points to the virtual table
     {
         std::cout << "Base::MemberFunc()" << std::endl;
     }
