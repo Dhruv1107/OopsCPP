@@ -51,9 +51,9 @@ int main()
     // int e(4.2);
     // // int f{4.2}; // error: narrowing conversion of '4.2000000000000002e+0' from 'double' to 'int' [-Wnarrowing]
 
-    // std::vector<int> v{1, 2, 3}; // Initializes vector with 1,2,3
+    // std::vector<int> v{1, 2, 3}; // Initializes vector with 1,2,3. It uses initilaizer list
 
-    // // std::vector<int> v1(1, 2, 3); // This is function signature, vector doesn;t have anything matching to this
+    // // std::vector<int> v1(1, 2, 3); // This is function signature, vector doesn;t have anything matching to this, So we get error
 
     // std::vector<int> v2(10, 1); // Size 10 vector initialized to 1
 

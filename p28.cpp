@@ -11,7 +11,7 @@ struct Entity
         init();
     }
 
-    Entity(std::string _name) : Entity() // Delegating Constructors
+    Entity(std::string _name) : Entity() // Delegating Constructors => it will call default ctr then run the body of parameterized ctr
     // Instead of repeating what Default Constructor did, we can just make a call to it
     // Thus that work will not be repeated explicitly
     // Thus we need not call init() here explicilty

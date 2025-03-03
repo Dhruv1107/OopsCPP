@@ -37,6 +37,13 @@ int main()
 
     std::cout << mike.GetThisAddress() << std::endl;
     std::cout << &mike << std::endl;
+    // For both these we get the same address
 
+    Person* Rishit = new Person(700);
+    std::cout<<Rishit->GetThisAddress()<<std::endl;
+    std::cout <<Rishit << std::endl;
+
+    delete Rishit;
+    
     return 0;
 }

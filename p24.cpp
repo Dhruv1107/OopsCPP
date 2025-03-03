@@ -45,6 +45,7 @@ int main()
     // and thus induces ambiguity for Player while compiling
 
     // The virtual will make only single copy of base class for all the derived classes
+    // Virtual inheritance is a C++ technique that ensures only one copy of a base class's member variables are inherited by grandchild derived classes
 
     std::cout << mike.x << std::endl; // now this will work
 

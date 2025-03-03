@@ -1,8 +1,7 @@
 #include "person.hpp"
 
-class Person::pImplPerson
+struct Person::pImplPerson   // pImplPerson only exists in the scope of person
 {
-public:
     std::string m_name;
     std::string m_strength;
     std::string m_speed;
@@ -11,6 +10,7 @@ public:
 Person::Person(std::string s)
 {
     m_impl = std::make_unique<pImplPerson>();
+    // m_impl = new pImplPerson;
     m_impl->m_name = s;
     m_impl->m_strength = "n/a";
     m_impl->m_speed = "n/a";
@@ -18,7 +18,7 @@ Person::Person(std::string s)
 
 Person::~Person()
 {
-    // delete m_impl; Now this will be managed automatically since we are using smart pointers
+    // delete m_impl; //Now this will be managed automatically since we are using smart pointers
 }
 
 std::string Person::GetAttributes()

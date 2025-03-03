@@ -6,7 +6,7 @@
 
 struct Entity
 {
-    // Entity() : name(""), collection(nullptr), x(0), y(0) {} // Now zero-initialisation will not work, so need to handle explicitly
+    // Entity() : name(""), collection(nullptr), x(0), y(0) {} // Now zero-initialisation will not work (using curly braces), so need to handle explicitly in the ctor
     std::string name;
     int *collection;
     int x;

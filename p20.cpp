@@ -6,10 +6,10 @@
 struct nocopy
 {
     nocopy() {};
-    nocopy(const nocopy &rhs) = delete;
-    nocopy &operator=(const nocopy &rhs) = delete;
+    nocopy(const nocopy &rhs) = delete; // Delete the cpy constructor
+    nocopy &operator=(const nocopy &rhs) = delete;  // Delete the cpy assignment constructor
 };
-struct Dog : public nocopy
+struct Dog : public nocopy  // We can't use copy and copy assignment constructor
 {
     virtual void Bark()
     {
@@ -74,9 +74,13 @@ int main()
     // Dog d;
     // Dog d2;
 
-    // d = d2;
+    // d = d2;  // We can't do this since we have deleted copy assignment constructor
 
-    // Dog d3 = d2;
+    // Dog d3 = d2; // We can't do this since we have deleted copy constructor
+
+    // Dog* d4 = new Dog;
+    // Dog* golden = new Golden;
+    // dog = golden; // This is possible since we are just changing the pointers and not calling the copy constructor
 
     return 0;
 }

@@ -1,7 +1,20 @@
 // Const Correctness with member functions
 // const:
 // read-only or immutable variable
+    /*
+        const float myNumber = 2.5f;
+        myNumber = 2.6f; //Cant do this
+    */
 // read-only parameters
+    /*
+        void setValue(const float number) {
+            // number = 123.f; // Cant do this
+        }
+        int main() {
+            float myNumber = 2.5f;
+            setValue(myNumber);
+        }
+    */
 // making all of the member-variables in a member-functions read-only
 
 #include <iostream>
@@ -13,7 +26,7 @@ public:
     ~UserDefinedType() {}
     UserDefinedType(const UserDefinedType &rhs) {}
 
-    int GetValue() const
+    int GetValue() const    // Anywhere in the member function we can't change the member variable m_value
     {
         ComputeValue();
         SetValue(1);

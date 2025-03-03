@@ -14,8 +14,8 @@ public:
     std::string GetAttributes();
 
 private:
-    class pImplPerson; // Forward declaration of class
-    // pImplPerson *m_impl; // This approach will actually hide the information from client
+    struct pImplPerson; // Forward declaration of struct
+    // pImplPerson* m_impl; // This approach will actually hide the information from client
     // that we don't want to share
     // Better we make it a unique ptr
     std::unique_ptr<pImplPerson> m_impl;

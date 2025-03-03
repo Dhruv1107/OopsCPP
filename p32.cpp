@@ -1,5 +1,3 @@
-// The 'static' keyword - understanding static vs stack vs heap memory
-
 // Static variables are allocated in the binary(object file or executable object file). They are not in either heap or stack.
 
 #include <iostream>

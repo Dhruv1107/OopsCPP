@@ -1,6 +1,6 @@
 // Composition (and aggregation) v/s Inheritance in C++
 
-// inheritance follows 'is-a' analogy
+// inheritance follows 'is-a' analogy. In the below example Character is a Point2D (which doesnt make sense)
 // Composition follows 'has-a' analogy
 // Aggregation follows 'has-a' analogy but lifetime is not necessarily tied to the object
 
@@ -16,14 +16,14 @@ struct Point2D
 class Character
 {
 public:
-    Character(Point2D &ref) : ref_home(ref) {} // We need to provide initialization to ref_home otherwise we can't compile it
+    Character(Point2D& ref) : ref_home(ref) {} // We need to provide initialization to ref_home using the initializer list otherwise we can't compile it
     ~Character() {}
 
 private:
-    Point2D m_position;
+    Point2D m_position; // Here Character has a Point2D
     Point2D m_direction; // This is composition as Character 'has-a' variable(s) of type Point2D
 
-    Point2D &ref_home; // This is aggregation
+    Point2D& ref_home; // This is aggregation
     // The '&' is just an alias for Point2D object but the scope of Point2D object can be different from this class object
 };
 
