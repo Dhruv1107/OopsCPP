@@ -1,5 +1,5 @@
 // Static variables are allocated in the binary(object file or executable object file). They are not in either heap or stack.
-
+// Refer to the image for  dividing the code into 3 parts
 #include <iostream>
 
 struct API
