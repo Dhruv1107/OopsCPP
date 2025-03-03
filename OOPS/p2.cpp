@@ -2,7 +2,7 @@
 // Will be splitting the previous code between 3 files
 
 // This will be driver file
-#include "Student.hpp"
+#include "p2Student.hpp"
 
 int main()
 {

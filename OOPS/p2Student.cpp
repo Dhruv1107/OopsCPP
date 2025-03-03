@@ -1,6 +1,6 @@
 // This will be implementation file or library file
 #include <iostream>
-#include "Student.hpp" //To get our Class in the scope of this file
+#include "p2Student.hpp" //To get our Class in the scope of this file
 
 // Need to use Class Scope '::' operator, to access class members
 
