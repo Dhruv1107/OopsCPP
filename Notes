@@ -1,0 +1,41 @@
+ar ru vehicle_library.a .\car.o .\bike.o
+does the following:
+
+ar – This is the GNU archiver tool, which is used to create, modify, and extract files from static libraries (.a files) in Unix-like systems.
+
+ru – These are options for ar:
+
+r (replace): Adds new object files (car.o, bike.o) to the archive (vehicle_library.a). If they already exist, they are replaced.
+u (update): Only replaces files if they are newer than the ones currently in the archive.
+vehicle_library.a – This is the static library being created or updated. If it doesn’t exist, ar will create it.
+
+.\car.o .\bike.o – These are object files (.o files) that are being added to the archive.
+
+Summary
+This command creates or updates a static library called vehicle_library.a by adding (r option) or replacing (u option) the object files car.o and bike.o.
+
+
+
+g++ -std=c++17 -c .\car.cpp .\bike.cpp
+Breaking it Down
+    g++ – The GNU C++ compiler.
+    -std=c++17 – This tells the compiler to use the C++17 standard.
+    -c – The compilation-only flag:
+        It tells g++ to compile the source files (car.cpp, bike.cpp) into object files (car.o, bike.o).
+        It does not link them into an executable.
+    .\car.cpp .\bike.cpp – These are the source files being compiled.
+
+What About -o?
+The -o option specifies the output file name. For example:
+    g++ -std=c++17 -c car.cpp -o car.o
+This compiles car.cpp into an object file car.o.
+
+If you want to compile multiple source files and create an executable:
+    g++ car.o bike.o -o vehicle
+This links car.o and bike.o into an executable named vehicle.
+
+Where to Find More Options?
+To see all available options, run:
+
+g++ --help
+or check the official GNU documentation:

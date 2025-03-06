@@ -1,0 +1,27 @@
+We will create only one object of the class.
+We might only want one DB connection, one logger or one configuration manager.
+
+Here are the important points to remember when implementing the Singleton pattern in C++:
+
+Private Static Instance Variable: Declare a private static variable of the class type to hold the single instance of the Singleton.
+
+Private Constructor: Make the constructor of the Singleton class private. This prevents direct instantiation of the class from outside.
+
+Public Static Access Method: Create a public static method (often named Instance or getLogger) that provides the global access point to the Singleton instance.
+
+Lazy Initialization: Inside the access method, implement lazy initialization. Create a new instance of the Singleton only if the static instance variable is null (meaning no instance exists yet).
+
+Thread Safety: Consider thread safety, especially in multi-threaded environments. Implement mechanisms like locking (using mutex in C++) or double-checked locking within the access method to ensure thread-safe instance creation.
+
+Prevent Copying: To strictly enforce the Singleton pattern, prevent copying of the Singleton instance. This involves:
+    Making the copy constructor private (Logger(const Logger &);).
+    Making the assignment operator private (Logger operator=(const Logger &);).
+
+1) Dont want users to create objects. Create the constructor as private.
+2) Create a static function in class, it should return the object pointer. So create a private static object.
+    This object is always returned in getLogger
+In static function:
+3) If the object was already created then return it, else create and return the object.
+4) In case of multithreading add the mutex in the static function, to block the creation of object in static function .
+5) Lock and Unlock of mutex is a heavy operation. Once the instance is created there is no need to put the lock, so you can add double check of if the object is not created then acquire the lock and create the object.
+6) Also make the copy, = operating overload as private

@@ -1,0 +1,7 @@
+    // Everytime we change anything in the library we need to tell the client to include the hpp files and add the 
+    // if else statements for different types of vehicles
+    // Here when we change the vechile library we need to change the client, it is tightly coupled
+    // The client should not be bothered what we are doing with the library.
+    // So we are going to create a factory => it will take care of entire creation logic without exposing to client
+
+    // Client uses the factory to create a product

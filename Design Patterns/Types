@@ -1,5 +1,6 @@
 SOLID Principles https://www.udemy.com/course/patterns-cplusplus/?couponCode=ST10MT30325G2
 Behavioural Design Patterns https://www.udemy.com/course/patterns-cplusplus/?couponCode=ST10MT30325G2
+(Interaction between the classes)
     1. Memento Pattern
     2. Observer Pattern
     3. Startegy
@@ -8,7 +9,7 @@ Behavioural Design Patterns https://www.udemy.com/course/patterns-cplusplus/?cou
     6. Iterator
     7. State
     8. Mediator
-Creational Design Patterns  https://www.udemy.com/course/creational_cpp/?couponCode=ST10MT30325G2
+Creational Design Patterns  https://www.udemy.com/course/creational_cpp/?couponCode=ST10MT30325G2 (create classes and instantiate them)
     1. Singleton
     2. Builder
     3. Factory
@@ -16,6 +17,7 @@ Creational Design Patterns  https://www.udemy.com/course/creational_cpp/?couponC
     5. Prototype
     6. Object Pool
 Structural Design Patterns  https://www.udemy.com/course/structural_cpp/?couponCode=ST10MT30325G2
+(Organize the classes to form a single structure and support the functionality)
     1. Adapter
     2. Decorator
     3. Proxy
