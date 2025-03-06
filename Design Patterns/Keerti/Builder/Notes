@@ -1,0 +1,11 @@
+When we are building a complex object which has lot of configurations in it we use builder design pattern.
+Building a Vehicle, Car etc.
+
+4 parts in UML diagram:
+1) Builder => This is the interface which ConcreateBuilder has to implement. In our example this is DesktopBuilder.hpp. (It has Product)
+2) CreateBuilder => This will implement the functions that are present in Builder and creat a Product. For Eg: DellConcreateBuilder, HPConcreateBuilder.
+3) Product => This will be created by Concreate Builder. (this is the product class which is nothing but desktop.hpp)
+4) Director => tells the steps to be followed to generate the product. (builder will be sent to the director, and director will use the builder to create the product) (It has builder to create the product)
+                Eg: First build the monitor then the motherboard then cpu and so on.
+                The person who will be building the desktop is the director.
+                Some people implement the director or some people call the client or the person who is using this pattern as a director.
