@@ -1,6 +1,6 @@
 #include "hpDesktopBuilder.hpp"
 #include "dellDesktopBuilder.hpp"
-#include "desktopDirector.hpp"
+#include "desktopDirector.cpp"
 
 int main() {
     HpDesktopBuilder* hpDesktopBuilder = new HpDesktopBuilder();

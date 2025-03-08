@@ -1,0 +1,11 @@
+Factory design pattern was creating concrete classes or objects.
+
+AbstractFactory is going to create factories that is going to create objects.
+Here we use AbstractFactory to create different factories.
+Here VechileFactory is the AbstractFactory.
+
+Client is going to use VechileFactory to create Car and Bike.
+Client is going to tell VechileFactory what company it wants Hyundai or Toyota.
+Depending on that VechileFactory will create Hyndai or Toyota Factory. (this is the extra layer compared to factory design pattern).
+
+Similarly we have button and textbox example
