@@ -1,0 +1,21 @@
+Two incompatible objects but we can satisfy the client by using adapter.
+
+We have XML data and we have a tool(DATA analytics tool) which can analyze the data. The problem here is the tool can only understand JSON data.
+The tool expects the data in JSON but we have it in XML.
+We use an adapter in between and convert the XML data into JSON data to send to the tool.
+The client doesn't know that there is an adapter in between.
+The client has the tool it just calls analyse Data.
+
+
+In the UML Diagram:
+Target is the DataAnalyticsTool and Adaptee is XMLData.
+Here target and Adaptee are anot compatible.
+Client calls the function request (analyseData) .
+
+We kept Adapter class.
+We inherted the Adapter class from the Target (DataAnalyticsTool).
+In Adapter class override the function request (analyseData).
+We have passed Adaptee in the constructor of the Adapter. So the XMLdata was a member so there was a compositional relationship of Adaptee with the Adapter.
+This composition relationship is called object adapter pattern.
+
+We can also do this by inheriting the Adaptee and Target to Adapter (Multiple inheritance). This is called class adapter pattern.
