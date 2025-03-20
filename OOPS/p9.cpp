@@ -13,6 +13,10 @@ public:
     Collection()
     {
         data = new int[10];
+        for (int i = 0; i < 10; i++)
+        {
+            data[i] = i;
+        }
     }
 
     ~Collection()
@@ -28,6 +32,7 @@ public:
 
     const int &operator[](std::size_t idx) const
     {
+        std::cout << "Const Here!" << std::endl;
         return data[idx];
     }
 
@@ -38,10 +43,18 @@ private:
 int main()
 {
     Collection myColection;
-    myColection[0] = 1; // meaning: operator[] is called which performs
+    myColection[0] = 100; // meaning: operator[] is called which performs
     // returns data[idx] i.e. data[0]. Finally it resolves to data[0] = 1; i.e. after this its normal assignment operator
-    myColection[1] = 2;
+    myColection[1] = 200;
 
     std::cout << myColection[1] << std::endl;
+
+    /*
+        The non-const operator[] is called instead of the const operator[] because the object myColection is not a const object.
+        In C++, the version of the operator[] that gets called depends on the const-qualification of the object on which it is called.
+    */
+
+    const Collection myColection1;
+    std::cout << myColection1[1] << std::endl; // Calls const operator[]
     return 0;
 }

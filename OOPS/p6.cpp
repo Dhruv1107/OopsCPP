@@ -25,6 +25,17 @@ public:
 
         return result; // Here destructor for result willbe called to destroy as it will be going out of scope
     }
+    /*
+        Addition Operator (+) Overloading:
+        The + operator is expected to return a new object that is the result of adding two Vector3f objects.
+        Returning a reference (Vector3f &) to a local object would be problematic because the local object would be destroyed when the function scope ends, leading to undefined behavior.
+        Therefore, the + operator returns a new Vector3f object by value (Vector3f operator+(const Vector3f &rhs) const).
+
+        Assignment Operator (=) Overloading:
+        The assignment operator modifies the existing object (the left-hand side of the assignment) to match the right-hand side.
+        It returns a reference to the modified object (Vector3f &operator=(const Vector3f &rhs)) to allow for chaining assignments (e.g., a = b = c).
+        The assignment operator does not create a new object but rather updates the existing one.
+    */
 
     Vector3f operator++() // this is prefix increment operator or pre-increment
     {
@@ -33,10 +44,12 @@ public:
         z = z + 1;
         return *this;
     }
-
-    bool operator==(const Vector3f& rhs) {
-        std::cout<<"part of class"<<std::endl;
-        if(x == rhs.x && y==rhs.y && z == rhs.z) {
+    // If we comment this then the outer function is called.
+    bool operator==(const Vector3f &rhs)
+    {
+        std::cout << "part of class" << std::endl;
+        if (x == rhs.x && y == rhs.y && z == rhs.z)
+        {
             return true;
         }
         return false;
@@ -45,9 +58,12 @@ public:
     float x, y, z;
 };
 
-bool operator==(const Vector3f& lhs, const Vector3f& rhs) {
-    std::cout<<"outside of class"<<std::endl;
-    if(lhs.x == rhs.x && lhs.y==rhs.y && lhs.z == rhs.z) {
+// Better to use the function outside the class to overload the operator since it will be more readable
+bool operator==(const Vector3f &lhs, const Vector3f &rhs)
+{
+    std::cout << "outside of class" << std::endl;
+    if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z)
+    {
         return true;
     }
     return false;
@@ -89,10 +105,13 @@ int main()
     myVector2.y = 2.f;
     myVector2.z = 3.f;
 
-    if(myVector == myVector2) {
-        std::cout<<"vectors are equal"<<std::endl;
-    } else {
-        std::cout<<"vectors are not equal"<<std::endl;
+    if (myVector == myVector2)
+    {
+        std::cout << "vectors are equal" << std::endl;
+    }
+    else
+    {
+        std::cout << "vectors are not equal" << std::endl;
     }
 
     return 0;
