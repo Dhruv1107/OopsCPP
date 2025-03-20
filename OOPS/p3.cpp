@@ -51,11 +51,14 @@ public:
 
     // Copy Assignment Operator
     // Called when object is already created, we are just making a copy later (e.g. a2 = a1)
+    // The & in &operator= means that the operator returns a reference to the object on the left-hand side of the assignment. This is important for enabling chained assignments and for efficiency.
+    // a = b = c; This works because b = c returns a reference to b, which is then assigned to a
     myArray &operator=(const myArray &rhs)
     {
 
         std::cout << "Copy Assignment Operator" << std::endl;
         // Self-assignment check
+        // &rhs is the address of the object on the right-hand side of the assignment and this is the address of the object on the left-hand side of the assignment.
         if (&rhs == this) // when suppose a2 = a2, doesn't make sense, so do nothing and simply return current object
         {
             return *this;
@@ -71,6 +74,13 @@ public:
         }
 
         return *this; // Need to return the new object i.e. on lhs;
+
+        /*
+            this is a pointer to the current object.
+            *this is a reference to the current object.
+            The copy assignment operator is expected to return a reference to the current object, not a pointer.
+            This allows for the correct behavior in chained assignments and ensures that the operator conforms to the expected signature.
+        */
     }
 
     void printArray()
@@ -103,23 +113,23 @@ int main()
     std::cout << mike << std::endl;
     std::cout << mike2 << std::endl;
 
-            /* Copy Constructor example
-            class Vector3{
-            public:
-                float x,y,z;
-            };
-            int main() {
-                Vector3 m;
-                m.x - 1.0f;
-                m.y = 2.0f;
-                m.z = 3.0f;
-                Vector3 m2;
-                m2 = m; //copy-assignment operator
+    /* Copy Constructor example
+    class Vector3{
+    public:
+        float x,y,z;
+    };
+    int main() {
+        Vector3 m;
+        m.x - 1.0f;
+        m.y = 2.0f;
+        m.z = 3.0f;
+        Vector3 m2;
+        m2 = m; //copy-assignment operator
 
-                cout<<m2.x<<m2.y<<m2.z; // 1,2,3
-            }
+        cout<<m2.x<<m2.y<<m2.z; // 1,2,3
+    }
 
-            */
+    */
 
     // Another Example
     myArray a1;
@@ -134,8 +144,17 @@ int main()
 
     myArray a3;
 
-    a3 = a2; // Copy Assignmet operator is called
+    a3 = a2; // Copy assignment operator is called
+
+    myArray a4;
+    myArray a5;
+
+    a5 = a4 = a2; // Chained assignment: Copy Assignment Operator is called for a3 = a2, then for a4 = a3
 
     a1.printArray();
     a2.printArray();
+
+    a3.printArray();
+    a4.printArray();
+    a5.printArray();
 }
