@@ -14,6 +14,7 @@ class UserDefinedTypes
 {
 public:
     friend void PrintPrivateMemberVariable(UserDefinedTypes u); // after adding this the error will be gone, it can be added in private also
+    // We are giving PrintPrivateMemberVariable function the permission to access the private variables
     // it doesnt matter as long as it is declared in the class
     // So basically this function is my friend and he can access my private info
     PrivateSecurityInfo m_info; // since we declared this class as friend in PrivateSecurityInfo, we can access its private members
@@ -45,6 +46,6 @@ void PrintPrivateMemberVariable(UserDefinedTypes u)
 int main()
 {
     UserDefinedTypes instance;
-    PrintPrivateMemberVariable(instance); // will give error due to private scope
+    PrintPrivateMemberVariable(instance);
     return 0;
 }
