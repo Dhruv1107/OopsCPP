@@ -61,9 +61,9 @@ int main()
     const int y = con(6); // now y is read-only
     // y = 8;                // error: assignment of read-only variable 'y'
 
-    std::cout << u.GetValue() << std::endl;
+    std::cout << u.GetValue() << std::endl; // 90
 
-    std::cout << con(6) << std::endl;
+    std::cout << con(6) << std::endl;   // 7 
 
     return 0;
 }

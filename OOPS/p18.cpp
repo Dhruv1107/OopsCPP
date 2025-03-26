@@ -58,3 +58,14 @@ int main()
 
     return 0;
 }
+
+/*
+OP:
+Base Constructor
+Derived Constructor
+Derived::MemberFunc()
+Base Destructor
+Base Constructor
+Base::MemberFunc()
+Base Destructor
+*/

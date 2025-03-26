@@ -1,6 +1,6 @@
 // Caution: Multiple Inheritance (and example of using it)
 // We'll use struct as its just class with everything public
-
+// https://www.geeksforgeeks.org/multiple-inheritance-in-c/
 #include <iostream>
 
 struct nocopy
