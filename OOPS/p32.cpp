@@ -28,11 +28,12 @@ int API::MAJOR = 7; // Now missing definition is added and thus the linker error
 int main()
 {
     API instance;
-    std::cout << "Major: " << API::MAJOR << std::endl;
+    std::cout << "Major: " << API::MAJOR << std::endl;  // 7
     instance.MAJOR = 8; // linker error: undefined reference to `API::MAJOR' [observe '::' scope resolution operator, its like declaration and not definition]
-    std::cout << "Major: " << API::MAJOR << std::endl;
+                        // If we have definition missing we'll get this error.
+    std::cout << "Major: " << API::MAJOR << std::endl;  // 8
 
-    std::cout << "major: " << API::GetMajorAttributes() << std::endl;
+    std::cout << "major: " << API::GetMajorAttributes() << std::endl;   // 8
     return 0;
 }
 

@@ -12,12 +12,26 @@ public:
         float speed{1.0f};
         float lifetime{50.0f};
 
-        void Move() { /* move particles */ }
+        void Move() {
+            // Dummy logic to simulate movement
+            x += speed;
+            y += speed;
+            z += speed;
+        }
     };
+
+    // Constructor to initialize the vector with a specific number of particles
+    ParticleSystem(size_t count) {
+        m_particles.resize(count); // Creates 'count' default-initialized Particles
+    }
 
     void Simulation() {
         for (size_t i = 0; i < m_particles.size(); ++i)
             m_particles[i].Move();
+    }
+
+    size_t Size() const {
+        return m_particles.size();
     }
 
 private:
@@ -26,11 +40,16 @@ private:
 
 int main() {
     ParticleSystem::Particle individualParticle; // Creating an individual particle
-    ParticleSystem p; // Creating a ParticleSystem object
+
+    size_t particleCount = 10; // Set the number of particles here
+    ParticleSystem p(particleCount); // Creating a ParticleSystem with 10 particles
+
+    std::cout << "Initial particle count: " << p.Size() << std::endl;
     p.Simulation(); // Running the simulation
 
     return 0;
 }
+
 
 /*
 Nested Classes Overview:

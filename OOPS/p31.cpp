@@ -33,15 +33,15 @@ int main()
 {
     Person mike(500);
 
-    std::cout << mike.GetAge() << std::endl;
+    std::cout << mike.GetAge() << std::endl;    //500
 
-    std::cout << mike.GetThisAddress() << std::endl;
-    std::cout << &mike << std::endl;
+    std::cout << mike.GetThisAddress() << std::endl;    //0x7fc51ffb44
+    std::cout << &mike << std::endl;    //0x7fc51ffb44
     // For both these we get the same address
 
     Person* Rishit = new Person(700);
-    std::cout<<Rishit->GetThisAddress()<<std::endl;
-    std::cout <<Rishit << std::endl;
+    std::cout<<Rishit->GetThisAddress()<<std::endl; //0x242880abaf0
+    std::cout <<Rishit << std::endl;    //0x242880abaf0
 
     delete Rishit;
     

@@ -1,19 +1,18 @@
 #ifndef PERSON_HPP
 #define PERSON_HPP
-#endif
 
 #include <string>
 #include <memory>
 
 class Person
 {
-public:
+    public:
     Person(std::string s);
     ~Person();
-
+    
     std::string GetAttributes();
-
-private:
+    
+    private:
     struct pImplPerson; // Forward declaration of struct
     // pImplPerson* m_impl; // This approach will actually hide the information from client
     // that we don't want to share
@@ -23,3 +22,5 @@ private:
     //  std::string m_strength;
     //  std::string m_speed;
 };
+
+#endif

@@ -20,6 +20,8 @@ public:
     {
         std::lock_guard<std::mutex> lk(m);
         ++data;
+    }
+};
 here we want the mutex to be mutable and the data to be const since we don't want to modify data(suppose) as we're defining get() function.
 Since it is expected that in mult-threaded environment, the mutex will be changing states.
 So this is one of the example of using mutable.

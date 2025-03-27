@@ -20,11 +20,11 @@ struct GameState {
 int main() {
     GameState gs;
 
-    std::cout << alignof(gs) << std::endl;
-    std::cout << sizeof(gs.checkpoint) << std::endl;
-    std::cout << sizeof(gs.score) << std::endl;
-    std::cout << sizeof(gs.numberOfPlayers) << std::endl;
-    std::cout << sizeof(gs) << std::endl;
+    std::cout << alignof(gs) << std::endl;  // 4
+    std::cout << sizeof(gs.checkpoint) << std::endl;    // 1
+    std::cout << sizeof(gs.score) << std::endl;         // 4
+    std::cout << sizeof(gs.numberOfPlayers) << std::endl;   // 2
+    std::cout << sizeof(gs) << std::endl;       // 12
 
     return 0;
 }
